@@ -1,0 +1,11 @@
+syntax = "proto3";
+package calculator;
+option go_package = "grpcLearning/calculator/proto";
+
+message SqRtRequest {
+    int32 number = 1;
+}
+
+message SqRtResponse {
+    double result =1;
+}

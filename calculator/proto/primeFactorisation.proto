@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+// package of this file
+package calculator;
+
+// package where we want our protoc to generate the files
+option go_package = "grpcLearning/calculator/proto";
+
+
+// We are trying to create a separate proto files, for each rpc request
+
+message PrimeFactorsRequest {
+    int32 number = 1;
+}
+
+message PrimeFactorsResponse {
+    int32 primeFactors =1;
+}

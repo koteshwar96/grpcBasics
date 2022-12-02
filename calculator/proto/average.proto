@@ -1,0 +1,11 @@
+syntax = "proto3";
+package calculator;
+option go_package = "grpcLearning/calculator/proto";
+
+message AverageRequest{
+    int32 readingValue = 1;
+}
+
+message AverageResponse {
+    double readingAverage = 1;
+}

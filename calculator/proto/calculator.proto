@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "grpcLearning/calculator/proto";
+
+import "sum.proto";
+import "primeFactorisation.proto";
+import "average.proto";
+import "max.proto";
+import "sqrt.proto";
+
+service CalculatorService {
+    rpc calculateSum (SumRequest) returns (SumResponse);
+    rpc determinePrimeFactors(PrimeFactorsRequest) returns ( stream PrimeFactorsResponse);
+    rpc calculateAverage(stream AverageRequest) returns (AverageResponse);
+    rpc calculateMax (stream MaxRequest) returns (stream MaxResponse);
+
+    // rpc call to understand error handling
+    rpc calculateSqRt(SqRtRequest) returns (SqRtResponse);
+
+    //rpc call to understand contexts with deadline and with values
+    rpc calculateSumWithDeadLine(SumRequest) returns (SumResponse);
+}

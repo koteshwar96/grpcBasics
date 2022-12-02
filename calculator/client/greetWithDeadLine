@@ -1,0 +1,11 @@
+package main
+
+import(
+	"context"
+)
+func dsf(){
+	ctx := context.Background()
+	ctx2 = context.With
+
+	ctx3, cancel := context.WithTimeout(context.Background(), timeout)
+}
