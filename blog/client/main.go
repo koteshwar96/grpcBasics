@@ -45,6 +45,16 @@ func main(){
 
 	readBlog(blogClient, blogId)
 	// Lets now call with some random string as uuid which will throw error
-	readBlog(blogClient, "randomUnknownUUId")
+	// readBlog(blogClient, "randomUnknownUUId")
 
+	updateBlog(blogClient,blogId)
+	// we are calling the read blog again to make sure if we have update the blog or not
+	readBlog(blogClient, blogId)
+
+	listBlogs(blogClient)
+
+	deleteBlog(blogClient,blogId)
+
+	// this should not return blog details as we have deleted it in the prev grpc call
+	readBlog(blogClient, blogId)
 }
